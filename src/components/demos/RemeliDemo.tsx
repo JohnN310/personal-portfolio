@@ -20,9 +20,8 @@ export function RemeliDemo() {
     setOrders(items => [...items, item]);
     setMessage(`Demo order confirmed: ${item.name}. Saved ${money(item.original - item.price)}. No payment taken.`);
   }
-  function reset() { setListings(initial); setOrders([]); setTicket("none"); setMessage("Demo reset. Choose a discounted meal."); }
   return <section className={styles.demo} aria-label="Remeli marketplace demo">
-    <div className={styles.top}><strong>remeli<span className={styles.green}>✳</span></strong><button onClick={reset} type="button">Reset</button></div>
+    <div className={styles.top}><strong>remeli<span className={styles.green}>✳</span></strong></div>
     <p className={styles.note}>Interactive demo · Sample listings and prices. No real orders.</p>
     <div className={styles.tabs} role="group" aria-label="Marketplace role">{["Buyer", "Seller", "Admin"].map(item => <button type="button" key={item} aria-pressed={role === item} onClick={() => setRole(item)}>{item}</button>)}</div>
     <div className={styles.phone}>
