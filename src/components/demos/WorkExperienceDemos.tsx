@@ -1,14 +1,10 @@
 "use client";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import styles from "./WorkExperienceDemos.module.css";
 
-function DemoLink({ compact, slug }: { compact: boolean; slug: string }) {
-  return compact ? <Link className={styles.detailLink} href={`/work/${slug}`}>Explore the build ↗</Link> : null;
-}
 const modules = ["Inspections", "Estimates", "Approvals", "Repairs", "Parts", "Posting"];
 const moduleDescriptions = ["Check vehicle condition and capture findings.", "Review proposed work and estimated cost.", "Confirm the work before repairs begin.", "Track work through the service queue.", "Check parts needed for the repair.", "Prepare the vehicle for its next step."];
-export function CoxWalkthrough({ compact = false }: { compact?: boolean }) {
+export function CoxWalkthrough() {
   const [module, setModule] = useState(0);
   const [tab, setTab] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -36,7 +32,7 @@ export function CoxWalkthrough({ compact = false }: { compact?: boolean }) {
       </div>
     </div>
     <div className={styles.result}><strong>66%<small>less waiting for notes</small></strong><div className={styles.bars}><div><span>Before</span><i style={{ width: "100%" }}/><b>5.0s</b></div><div><span>After</span><i style={{ width: "34%" }}/><b>1.7s</b></div></div></div>
-    <div className={styles.footer}><span>Illustrative demo · Sample data<br/>Timing demonstrates the reported result.</span><DemoLink compact={compact} slug="cox-automotive"/></div>
+    <div className={styles.footer}><span>Illustrative demo · Sample data<br/>Timing demonstrates the reported result.</span></div>
   </section>;
 }
 const records = [
@@ -44,7 +40,7 @@ const records = [
   { name: "Change approval", year: "2024", id: "DEMO-002", type: "Change management" },
   { name: "Access review", year: "2023", id: "DEMO-003", type: "User access control" },
 ];
-export function AuditWalkthrough({ compact = false }: { compact?: boolean }) {
+export function AuditWalkthrough() {
   const [name, setName] = useState("Access review");
   const [year, setYear] = useState("2024");
   const [state, setState] = useState<"idle" | "searching" | "found" | "empty">("idle");
@@ -72,6 +68,6 @@ export function AuditWalkthrough({ compact = false }: { compact?: boolean }) {
       </div>
     </div>
     <div className={styles.result}><strong>91%+<small>less retrieval time</small></strong><div className={styles.time}><del>60s</del><span aria-hidden="true">→</span><b>5s</b></div></div>
-    <div className={styles.footer}><span>Fictional records · Accelerated demo<br/>Reported retrieval time: 60 → 5 seconds.</span><DemoLink compact={compact} slug="norfolk-southern"/></div>
+    <div className={styles.footer}><span>Fictional records · Accelerated demo<br/>Reported retrieval time: 60 → 5 seconds.</span></div>
   </section>;
 }

@@ -78,7 +78,7 @@ h1,h2,h3 { text-wrap:balance; }
 .section-intro h2 { font-size:clamp(3rem,2vw + 3rem,6rem); font-weight:600; line-height:1; letter-spacing:-.055em; text-shadow: 0 0 30px rgba(255, 255, 255, 0.1); }
 .section-heading-row>p { font-size:13px; line-height:1.6; color:var(--muted); flex-shrink:0; }
 .project-feature { display:grid; grid-template-columns:5fr 6fr; gap:85px; align-items:center; padding:24px 0 85px; }
-.project-feature+.project-feature { padding:85px 0 0; border-top:1px solid var(--line); }
+.project-feature+.project-feature { padding-top:85px; border-top:1px solid var(--line); }
 .project-copy .eyebrow { color:var(--muted); font-size:14px; }
 .project-number { margin-right:16px; color:var(--accent); }
 .project-copy h3 { font-size:clamp(3rem,4.5vw,5rem); letter-spacing:-.05em; font-weight:600; line-height:1; margin:23px 0; }
