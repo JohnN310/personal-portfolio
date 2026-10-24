@@ -32,7 +32,7 @@ export const projects: Project[] = [
     problem: "False alarms ruin fraud detection systems.",
     built: "Contributed daily transaction-burst features, Random Forest implementation, and model evaluation to a team project using a 200-tree classifier.",
     challenge: "Evaluated fraud detection on a dataset reported as 8.9M+ transactions, comparing a baseline, balanced data, and personalized features.",
-    outcome: "The final report’s §4.3.4 analysis reports 97.8% accuracy, 89% precision, 72% recall, and 37% fewer false alarms for Case 3 (SMOTE + personalization). These narrative results differ from the earlier five-fold tables.",
+    outcome: "The final report’s §4.3.4 analysis reports 97.8% accuracy, 89% precision, 72% recall, and 37% fewer false alarms for Case 3 (SMOTE + personalization).",
     metrics: [{ value: "8.9M+", label: "transactions", qualifier: "Dataset" }, { value: "97.8%", label: "accuracy", qualifier: "Case 3 · Report §4.3.4" }],
     technologies: ["Python", "Random Forest", "Feature engineering"],
   },
