@@ -1,4 +1,4 @@
-export type ProjectSlug = "remeli" | "agentic-migration" | "fraud-detection" | "malware-research";
+export type ProjectSlug = "remeli" | "agentic-migration" | "fraud-detection" | "malware-research" | "cox-automotive" | "norfolk-southern";
 export interface EvidenceMetric { value: string; label: string; qualifier: string; }
 export interface Project {
   slug: ProjectSlug; number: string; title: string; category: string; headline: string;

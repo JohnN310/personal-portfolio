@@ -11,7 +11,7 @@ export function ResearchSection() {
         <SectionIntro eyebrow="2" title="Research Experience"/>
       </div>
       <div className={`research-grid ${styles.grid}`}>
-        {projects.slice(2).map((project, index) => <article className={`research-feature ${styles.feature}`} key={project.slug}>
+        {projects.filter(project => project.slug === "fraud-detection" || project.slug === "malware-research").map((project, index) => <article className={`research-feature ${styles.feature}`} key={project.slug}>
           {index === 1 ? (
             <MalwareWalkthrough compact/>
           ) : (
