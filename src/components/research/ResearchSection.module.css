@@ -1,0 +1,25 @@
+/* Shared intrinsic rows keep both stories aligned as copy wraps or details open. */
+.grid { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:48px; row-gap:0; }
+.feature { display:grid; grid-row:span 7; grid-template-rows:subgrid; row-gap:0; }
+.copy { display:grid; grid-row:span 6; grid-template-rows:subgrid; row-gap:0; }
+.copy>p,.copy>h3,.copy>details,.copy>a { align-self:start; }
+.copy>div { align-self:center; }
+.figureLink { display:block; min-width:0; border-radius:12px; }
+.figureLink>:is(div,section) { height:100%; transition:border-color .2s ease,background-color .2s ease; }
+.figureLink svg { transition:transform .25s ease; transform-origin:center; }
+.figureLink:focus-visible { outline:2px solid #8eb8ff; outline-offset:5px; border-radius:12px; }
+.figureLink:focus-visible>:is(div,section) { border-color:#719bce; background:#0e141d; }
+.figureLink:active svg { transform:scale(.98); }
+@media(hover:hover) {
+  .figureLink:hover>:is(div,section) { border-color:#719bce; background:#0e141d; }
+  .figureLink:hover svg { transform:scale(1.025); }
+  .figureLink:hover:active svg { transform:scale(.98); }
+}
+@media(prefers-reduced-motion:reduce) {
+  .figureLink>:is(div,section),.figureLink svg { transition:none; }
+  .figureLink:hover svg,.figureLink:active svg,.figureLink:hover:active svg { transform:none; }
+}
+@media(max-width:767px) {
+  .grid { grid-template-columns:minmax(0,1fr); row-gap:48px; }
+  .feature,.copy { display:block; grid-row:auto; }
+}

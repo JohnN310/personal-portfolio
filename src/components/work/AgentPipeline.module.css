@@ -1,0 +1,38 @@
+.figure { margin:0; padding:26px; border:1px solid var(--line); border-radius:20px; background:#090c11; overflow:hidden; }
+.top { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.brand { font-size:25px; font-weight:650; letter-spacing:-1px; }
+.brand>span { color:#8bb7fa; padding-inline:3px; }
+.sketch { color:var(--muted); font-size:10px; }
+.stage { min-height:300px; display:grid; place-items:center; padding-block:14px; }
+.overview { width:100%; text-align:center; animation:arrive .3s ease-out both; }
+.overview svg { width:255px; height:235px; margin:auto; overflow:visible; }
+.orbit { fill:none; stroke:#263346; stroke-dasharray:3 7; }
+.wire { fill:none; stroke:#365276; stroke-width:1; }
+.node { fill:#121e2e; stroke:#527ca8; transform-origin: center; transform-box: fill-box; transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1), stroke 0.6s ease; }
+.light { fill:#a2c9ff; transform-origin: center; transform-box: fill-box; transition: transform 0.6s ease, fill 0.6s ease; }
+.core { fill:#15253a; stroke:#608dc6; transform-origin: center; transform-box: fill-box; transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1); }
+.figure:hover .node { transform: scale(1.3); stroke: #7faee6; }
+.figure:hover .light { transform: scale(1.8); fill: #ffffff; }
+.figure:hover .core { transform: scale(1.05); }
+.count { font-family:inherit; font-size:32px; font-weight:500; fill:#e3eeff; transition: transform 0.6s ease; transform-origin: center; transform-box: fill-box; }
+.figure:hover .count { transform: scale(1.1); }
+.coreLabel { font-family:inherit; font-size:7px; letter-spacing:2px; fill:#a2b5ce; }
+.overview>p { font-size:12px; color:#bbc9dd; margin:6px 0 0; }
+.overview>p span { color:#7293c0; padding:0 18px; }
+.inspector { text-align:center; width:100%; padding:10px 0; animation:arrive .3s ease-out both; }
+.symbol { width:76px; height:76px; margin:0 auto 25px; display:grid; place-items:center; border:1px solid #567cac; background:#15253a; border-radius:22px; color:#b2d2ff; font-size:36px; box-shadow:0 0 0 12px #15253a44; transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.6s ease; }
+.figure:hover .symbol { transform: translateY(-6px) scale(1.05); box-shadow: 0 10px 20px #15253a88, 0 0 0 16px #15253a44; }
+.transfer { display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:24px; }
+.transfer>span:not(:nth-child(2)) { font-size:11px; color:#c4d4ea; background:#141e2c; padding:8px 12px; border:1px solid #2c405b; border-radius:7px; }
+.transfer>span:nth-child(2) { color:#80a9dd; }
+.inspector h4 { font-size:18px; font-weight:550; margin:0 0 8px; }
+.inspector p { max-width:330px; margin:auto; font-size:12px; line-height:1.65; color:#a7b6cb; }
+.controls { display:flex; flex-wrap:wrap; justify-content:center; gap:7px; }
+.controls button { flex:1 1 auto; min-height:44px; padding:9px 11px; background:transparent; border:1px solid #303a48; border-radius:9px; color:#bdc9da; font-size:11px; transition:background .18s,color .18s,border-color .18s; }
+.controls button:hover { background:#17263b; border-color:#739bcf; color:white; }
+.controls button[aria-pressed=true] { background:#b4d2ff; border-color:#b4d2ff; color:#14233a; }
+.controls button:focus-visible { outline:2px solid #8eb8ff; outline-offset:3px; }
+.srOnly { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
+@keyframes arrive { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+@media(max-width:479px) { .figure { padding:18px; } .controls button { flex-basis:27%; } .transfer { gap:8px; } .transfer>span:not(:nth-child(2)) { padding:7px; font-size:10px; } }
+@media(prefers-reduced-motion:reduce) { .overview,.inspector { animation:none; } .controls button { transition:none; } }

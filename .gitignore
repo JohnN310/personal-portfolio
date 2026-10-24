@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+test-results/
+playwright-report/
+.env*
+!.env.example
+*.tsbuildinfo
+.superpowers/
+artifacts/
+resume-review.png

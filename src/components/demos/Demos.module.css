@@ -1,0 +1,39 @@
+.demo { min-width:0; border:1px solid #28303b; border-radius:20px; padding:24px; background:#0b0f15; color:#eef3fb; }
+.top { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px; }
+.top>strong { font-size:20px; letter-spacing:-.04em; }
+.note { color:#aebbc9; font-size:11px; line-height:1.65; margin:10px 0; }
+.green { color:#a4e4b6; }.blue { color:#9fc9ff; }
+.demo button { min-height:44px; border:1px solid #405168; border-radius:8px; padding:9px 12px; background:#172334; color:#e9f2ff; font-size:12px; cursor:pointer; }
+.demo button:hover:not(:disabled) { background:#263d59; }
+.demo button:disabled { opacity:.55; cursor:default; }
+.demo button:focus-visible,.demo input:focus-visible { outline:2px solid #9fc9ff; outline-offset:3px; }
+.tabs { display:flex; flex-wrap:wrap; gap:6px; margin:18px 0; }
+.tabs>button { flex:1; }
+.tabs>button[aria-pressed=true] { background:#bad7ff; color:#102038; border-color:#bad7ff; }
+.phone { width:min(100%,340px); margin:18px auto; border:5px solid #35473d; border-radius:28px; overflow:hidden; background:#101a14; }
+.phoneTop { display:flex; justify-content:space-between; background:#1e3025; padding:16px; font-size:12px; }
+.phoneBody { height:390px; overflow:auto; overscroll-behavior:contain; padding:18px 14px; scrollbar-width:thin; }
+.phoneBody h3 { font-size:21px; font-weight:550; margin-bottom:10px; }
+.food { display:grid; grid-template-columns:38px minmax(0,1fr); gap:10px; padding:18px 0; border-bottom:1px solid #304537; }
+.foodIcon { font-size:30px; }.food h4 { margin:0 0 6px; font-size:13px; }.food p { font-size:12px; }.food del { color:#a3b1a8; font-size:11px; }.food small { font-size:10px; color:#b3c2b8; }.food button { grid-column:2; justify-self:start; }
+.receipt { display:flex; flex-direction:column; gap:12px; margin-top:18px; font-size:13px; padding:14px; background:#223b2b; border-radius:12px; }
+.form { display:grid; gap:16px; margin-block:20px; }.form label { display:grid; gap:8px; font-size:12px; }.form input { width:100%; min-width:0; padding:11px; background:#0c140f; color:white; border:1px solid #567361; border-radius:8px; font:inherit; }.formRow { display:grid; grid-template-columns:1fr 1fr; gap:12px; }.demo .primary { background:#badfc4; color:#112719; }
+.ticket { display:flex; flex-direction:column; gap:16px; padding:16px; border:1px solid #3b5144; border-radius:12px; font-size:13px; line-height:1.6; }
+.status { font-size:14px; color:#d3e8da; line-height:1.5; margin:0; padding-top:12px; border-top:1px solid #2c3b32; }
+.flow { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; list-style:none; padding:0; margin:24px 0; counter-reset:none; }.flow li { min-width:0; }.flow button { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; width:100%; height:82px; font-size:10px; text-align:center; padding:8px 4px; }.flow button>span { display:grid; place-items:center; border:1px solid #5a7396; border-radius:50%; width:24px; height:24px; }.flow button[aria-current=step] { background:#b4d3ff; color:#13273e; border-color:#b4d3ff; }.flow button[aria-current=step]>span { border-color:#13273e; }
+.codePane { border:1px solid #35475f; border-radius:12px; overflow:hidden; }.codePane>div { display:flex; justify-content:space-between; background:#142134; padding:12px; font-size:11px; gap:10px; }.codePane pre { margin:0; min-height:180px; padding:18px 14px; font-size:12px; line-height:1.8; overflow:auto; background:#070c14; color:#bfdbff; }.explanation { min-height:56px; margin:16px 0; font-size:13px; color:#bbc9da; line-height:1.7; }.playback { display:flex; flex-wrap:wrap; gap:8px; }.playback button { flex:1; }
+.preview { display:block; text-decoration:none; color:inherit; border-radius:14px; cursor:pointer; }
+.preview pre, .preview code { cursor:pointer; }
+.preview:hover .codePane { border-color:#5d84b5; box-shadow:0 8px 24px rgba(159,201,255,0.12); }
+.preview:hover .codePane>div { background:#192a42; }
+.preview:hover .explanation { color:#e2ecf8; }
+.preview:focus-visible { outline:2px solid #9fc9ff; outline-offset:4px; }
+.chartLabel { display:flex; justify-content:space-between; color:#dce8fb; font-size:12px; margin:20px 0; }.chartLabel>span { color:#aebbc9; font-size:10px; }.bars { display:grid; gap:18px; }.barRow>div:first-child { display:flex; justify-content:space-between; font-size:12px; margin-bottom:7px; }.barRow strong { font-weight:550; }.track { height:10px; background:#1c2736; border-radius:4px; overflow:hidden; }.track>span { display:block; height:100%; transition:width .3s ease; border-radius:4px; }.resultStats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; border-block:1px solid #35475f; padding:20px 0; margin:24px 0; }.resultStats>div { display:flex; flex-direction:column; gap:6px; }.resultStats strong { font-size:22px; color:#a7cfff; }.resultStats span { font-size:10px; color:#aebbc9; }.source { font-size:12px; margin-top:20px; }.source summary { min-height:44px; display:flex; align-items:center; }.source p { line-height:1.7; color:#aebbc9; }.source table { width:100%; font-size:10px; border-collapse:collapse; margin-top:16px; }.source td,.source th { text-align:left; padding:8px 3px; border-bottom:1px solid #35475f; }.source caption { text-align:left; padding:8px 0; color:#aebbc9; }
+.compact { height:100%; min-height:254px; padding:20px 22px 12px; border-radius:12px; }.compact .top>strong { font-size:16px; }.compact .chartLabel { margin:14px 0; }.compact .bars { gap:12px; }
+@media(max-width:479px) { .demo { padding:16px; }.phoneBody { height:360px; }.resultStats { gap:8px; }.resultStats strong { font-size:18px; }.flow { gap:5px; }.source table { font-size:9px; } }
+@media(prefers-reduced-motion:reduce) { .track>span { transition:none; } }
+.handoff { height:3px; overflow:hidden; background:#23354e; margin-bottom:16px; border-radius:2px; }
+.handoff>span { display:block; width:20%; height:100%; background:#a5ccff; }
+.movingPacket { animation:handoff 2.6s linear infinite; }
+@keyframes handoff { from { transform:translateX(-100%); } to { transform:translateX(500%); } }
+@media(prefers-reduced-motion:reduce) { .movingPacket { animation:none; } }

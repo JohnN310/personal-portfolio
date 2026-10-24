@@ -1,0 +1,3 @@
+"use client";
+import { useState } from "react";
+export function CopyEmailButton({ email }: { email: string }) { const [message,setMessage] = useState(""); return <div className="copy-email"><button type="button" aria-label="Copy email" onClick={async () => { try { await navigator.clipboard.writeText(email); setMessage("Email copied"); } catch { setMessage("Couldn't copy. Select the email below."); } }}><svg aria-hidden="true" width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4"><rect x="6" y="6" width="10" height="11" rx="2"/><path d="M12 6V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/></svg><span>Copy email</span></button><span className="copy-status" role="status">{message}</span></div>; }
