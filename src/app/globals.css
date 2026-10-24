@@ -244,8 +244,6 @@ h1,h2,h3 { text-wrap:balance; }
 .case-sidebar { min-width:0; }
 .case-metrics { display:flex; gap:40px; margin:30px 0; }
 .case-source { font-size:13px; color:var(--muted); line-height:1.8; }
-.next-project { display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--line); padding:35px 0 65px; }
-.next-project .action { font-size:28px; }
 .not-found { padding:110px 0; }
 .not-found h1 { font-size:clamp(2.5rem,5vw,5rem); letter-spacing:-.05em; line-height:1.1; margin:25px 0; }
 .not-found p:not(.eyebrow) { margin-bottom:24px; color:var(--muted); }
@@ -430,8 +428,6 @@ body { font-size:16px; line-height:1.6; }
   .case-meta { flex-direction:column; gap:8px; }
   .case-header { padding:28px 0; }
   .case-body { padding-block:36px; }
-  .next-project { flex-wrap:wrap; gap:16px; }
-  .next-project .action { font-size:20px; }
 }
 @media (pointer:coarse) { .field-note { display:none; } }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation:none!important; transition:none!important; } .object-motion { transform:none!important; will-change:auto; } }
