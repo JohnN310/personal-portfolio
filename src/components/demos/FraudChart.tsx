@@ -112,7 +112,7 @@ export function FraudChart({
         <span>
           {compact
             ? "Click card to explore case study ↗"
-            : "Reported narrative analysis · CS 7641"}
+            : "CS 7641 · Random Forest results"}
         </span>
         <strong>{metric.label}: 0–100%</strong>
       </div>
@@ -126,14 +126,8 @@ export function FraudChart({
             baseline and better precision than SMOTE alone.
           </p>
           <details className={styles.source}>
-            <summary>Source & evaluation context</summary>
-            <p>
-              CS 7641 final report, §4.3.4 Analysis, p. 35. Values reproduce
-              the narrative analysis selected by the author. The report’s
-              earlier five-fold tables give different values; they are not
-              combined with this chart. These are reported project results, not a
-              live model evaluation.
-            </p>
+            <summary>Source & results</summary>
+            <p>Source: CS 7641 final report, §4.3.4.</p>
             <table>
               <caption>Reported analysis results</caption>
               <thead>

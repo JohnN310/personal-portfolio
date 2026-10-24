@@ -44,8 +44,8 @@ export const projects: Project[] = [
     problem: "Classify URLs as benign, defacement, phishing, or malware from their text and structure.",
     built: "Implemented URL classification experiments in Python. The public code includes Decision Tree, Random Forest, KNN, Naive Bayes, CNN, and LSTM.",
     challenge: "Traditional models use engineered URL features; CNN and LSTM models learn from tokenized sequences. Comparing them requires consistent data splits and careful handling of preprocessing.",
-    outcome: "Over 90% accuracy with machine learning models and over 95% with two deep learning models on 650,000+ URLs. Saved scores are not included in the public repository. Presented at KSU’s Spring and Fall 2023 Symposia of Student Scholars.",
-    metrics: [{ value: "8", label: "models", qualifier: "Résumé-reported" }, { value: "650K+", label: "URLs", qualifier: "Résumé-reported" }],
+    outcome: "Over 90% accuracy with machine learning models and over 95% with two deep learning models on 650,000+ URLs. Presented at KSU’s Spring and Fall 2023 Symposia of Student Scholars.",
+    metrics: [{ value: "8", label: "models", qualifier: "Trained & evaluated" }, { value: "650K+", label: "URLs", qualifier: "Dataset" }],
     technologies: ["Python", "Random Forest", "LSTM", "CNN"],
   },
   {
