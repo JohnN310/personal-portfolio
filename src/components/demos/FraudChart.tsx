@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { useState } from "react";
 import { fraudResults, fraudMetrics } from "@/content/fraud-results";
 import styles from "./FraudChart.module.css";
@@ -18,10 +17,8 @@ const caseTags: Record<string, string> = {
 
 export function FraudChart({
   compact = false,
-  href,
 }: {
   compact?: boolean;
-  href?: string;
 }) {
   const [metricIndex, setMetric] = useState(0);
   const metric = fraudMetrics[metricIndex];
@@ -96,23 +93,11 @@ export function FraudChart({
         {insights[metric.key] ?? metric.note}
       </p>
 
-      {compact && href ? (
-        <Link
-          href={href}
-          className={styles.visualLink}
-          aria-label="Explore Signal fraud detection research"
-        >
-          {chartCard}
-        </Link>
-      ) : (
-        chartCard
-      )}
+      {chartCard}
 
       <div className={styles.bottom}>
         <span>
-          {compact
-            ? "Click card to explore case study ↗"
-            : "CS 7641 · Random Forest results"}
+          CS 7641 · Random Forest results
         </span>
         <strong>{metric.label}: 0–100%</strong>
       </div>

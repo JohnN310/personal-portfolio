@@ -7,17 +7,9 @@ const stages = [
   ["Dependencies", "Generate dependencies needed by the converted code."],
   ["Testing", "Include testing in the workflow, beyond text generation alone."],
 ];
-export function AgentPipeline({
-  compact = false,
-  href = compact ? "/work/agentic-migration" : undefined,
-  ariaLabel,
-}: {
-  compact?: boolean;
-  href?: string;
-  ariaLabel?: string;
-} = {}) {
+export function AgentPipeline({ compact = false }: { compact?: boolean } = {}) {
   return <div>
-    <AgentFlowDemo href={href} ariaLabel={ariaLabel}/>
+    <AgentFlowDemo/>
     {!compact && <div className="diagram-controls pipeline-controls">{stages.map(([title,detail]) => <details key={title}><summary>{title}<span aria-hidden="true">+</span></summary><p>{detail}</p></details>)}</div>}
   </div>;
 }

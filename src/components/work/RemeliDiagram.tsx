@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { useState } from "react";
 import styles from "./RemeliDiagram.module.css";
 
@@ -9,12 +8,12 @@ const scenes = [
   { title: "Reserve it for $4.", role: "Buyer", subtitle: "One bag reserved for pickup.", action: "Order confirmed", label: "Your order" },
   { title: "Pick up. Enjoy.", role: "Pickup", subtitle: "Good food gets a second chance.", action: "Picked up ✓", label: "Ready to collect" },
 ];
-export function RemeliDiagram({ href = "/work/remeli" }: { href?: string }) {
+export function RemeliDiagram() {
   const [step,setStep] = useState(0);
   const scene = scenes[step];
   return <figure className={styles.figure} aria-label="Remeli marketplace walkthrough">
     <div className={styles.top}><strong>remeli<span>✳</span></strong><span>Product walkthrough</span></div>
-    <Link href={href} className={styles.preview} aria-label="Open Remeli and try the marketplace demo">
+    <div className={styles.preview}>
       <div className={styles.scene} key={step}>
         <div className={styles.phone}>
           <div className={styles.phoneTop}><span>remeli</span><span>{scene.role}</span></div>
@@ -30,10 +29,10 @@ export function RemeliDiagram({ href = "/work/remeli" }: { href?: string }) {
         </div>
         <div className={styles.caption}><span className={styles.stepLabel}>0{step+1} / 04</span><h4>{scene.title}</h4><p>{scene.subtitle}</p></div>
       </div>
-    </Link>
+    </div>
     <div className={styles.footer}>
       <div className={styles.progress} role="group" aria-label="Walkthrough scenes">{scenes.map((item,index) => <button type="button" key={item.title} aria-label={`Scene ${index+1}: ${item.title}`} aria-pressed={index === step} onClick={() => { setStep(index); }}>{["List", "Find", "Reserve", "Pickup"][index]}</button>)}</div>
     </div>
-    <figcaption className={styles.note}>Simulated flow · Sample prices · Click to try</figcaption>
+    <figcaption className={styles.note}>Simulated flow · Sample prices</figcaption>
   </figure>;
 }

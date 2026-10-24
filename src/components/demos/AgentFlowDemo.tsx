@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import styles from "./Demos.module.css";
 const steps = [
@@ -10,13 +9,7 @@ const steps = [
   { name: "Test", detail: "Check that successive calls update the counter.", code: "Counter c = new Counter();\nassert c.increment() == 1;\nassert c.increment() == 2;", file: "Example checks" },
   { name: "Evaluate again", detail: "Review the test results and final Java output.", code: "class Counter {\n  private int count = 0;\n  int increment() {\n    return ++count;\n  }\n}", file: "Java output" },
 ];
-export function AgentFlowDemo({
-  href,
-  ariaLabel = "Open Agentic AI and explore the framework",
-}: {
-  href?: string;
-  ariaLabel?: string;
-} = {}) {
+export function AgentFlowDemo() {
   const [step, setStep] = useState(0), [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(true), [visible, setVisible] = useState(false);
   const root = useRef<HTMLElement>(null);
@@ -26,7 +19,7 @@ export function AgentFlowDemo({
   const preview = (
     <>
       <div className={styles.codePane}>
-        <div><span>{current.file}</span><span className={styles.blue}>Agent {step+1}{href ? " ↗" : ""}</span></div>
+        <div><span>{current.file}</span><span className={styles.blue}>Agent {step+1}</span></div>
         <pre><code>{current.code}</code></pre>
       </div>
       <p className={styles.explanation}>{current.detail}</p>
@@ -35,16 +28,10 @@ export function AgentFlowDemo({
 
   return <section ref={root} className={styles.demo} aria-label="Animated six-agent migration walkthrough">
     <div className={styles.top}><strong>Smalltalk <span className={styles.blue}>→</span> Java</strong><span className={styles.note}>{step+1} / 6</span></div>
-    <p className={styles.note}>{href ? "Illustrative walkthrough · Click to explore framework" : "Illustrative walkthrough · No live code execution"}</p>
+    <p className={styles.note}>Illustrative walkthrough · No live code execution</p>
     <ol className={styles.flow}>{steps.map((item,index) => <li key={item.name}><button type="button" aria-current={step === index ? "step" : undefined} onClick={() => { setStep(index); setPaused(true); }}><span>{index < step ? "✓" : index+1}</span>{item.name}</button></li>)}</ol>
     <div className={styles.handoff} aria-hidden="true"><span key={step} className={!paused && !reduced && visible ? styles.movingPacket : undefined}/></div>
-    {href ? (
-      <Link href={href} className={styles.preview} aria-label={ariaLabel}>
-        {preview}
-      </Link>
-    ) : (
-      preview
-    )}
+    {preview}
     <div className={styles.playback}><button type="button" onClick={() => { setStep(0); setPaused(true); }}>Restart</button>{!reduced && <button type="button" onClick={() => setPaused(value => !value)}>{paused ? "Play" : "Pause"}</button>}<button type="button" onClick={() => { setStep(value => (value+1)%steps.length); setPaused(true); }}>Next step →</button></div>
     {reduced && <p className={styles.note}>Reduced motion: use the steps to advance.</p>}
   </section>;

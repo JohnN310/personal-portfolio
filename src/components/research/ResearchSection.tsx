@@ -15,7 +15,7 @@ export function ResearchSection() {
           {index === 1 ? (
             <MalwareWalkthrough compact/>
           ) : (
-            <FraudChart compact href={`/work/${project.slug}`}/>
+            <FraudChart compact/>
           )}
           <div className={`research-copy ${styles.copy}`}>
             <p className="eyebrow">{project.category}</p>
