@@ -56,7 +56,6 @@ export function AuditWalkthrough() {
   return <section className={`${styles.demo} ${styles.audit}`} aria-label="Norfolk Southern illustrative file retrieval demo">
     <div className={styles.top}><strong>Control file retrieval</strong><span>NORFOLK SOUTHERN</span></div>
     <div className={styles.auditBody}>
-      <div className={styles.flow} aria-label="Retrieval stages"><span data-active={state === "idle"}>01 Search</span><span data-active={state === "searching"}>02 Match</span><span data-active={state === "found"}>03 Open</span></div>
       <form className={styles.search} onSubmit={event => { event.preventDefault(); search(); }}>
         <label>File name<input value={name} maxLength={80} required onChange={event => { setName(event.target.value); setState("idle"); setRecord(null); if(timer.current) clearTimeout(timer.current); }}/></label>
         <label>Control year<select value={year} onChange={event => { setYear(event.target.value); setState("idle"); setRecord(null); if(timer.current) clearTimeout(timer.current); }}><option>2024</option><option>2023</option></select></label>
